@@ -12,13 +12,17 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-        window=primaryStage;
-        window.setTitle("Tutorial05");
+        window = primaryStage;
+        window.setTitle("Tutorial06");
 
         button = new Button("Click me");
-        button.setOnAction(e->AlertBox.display("title","message"));
+        button.setOnAction(e -> {
+            boolean result = ConfirmBox.display("title", "message");
+            System.out.println(result);
+        });
 
         StackPane layout = new StackPane();
         layout.getChildren().add(button);
